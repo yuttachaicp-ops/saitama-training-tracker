@@ -75,16 +75,38 @@ npm run dev
 
 ---
 
-## นำขึ้นเว็บ (ไม่บังคับ)
+## นำขึ้นเว็บ
 
-โปรเจกต์ตั้งค่า `base: './'` ไว้แล้ว จึงอัปโหลดโฟลเดอร์ `dist/` ขึ้นที่ไหนก็ได้
+แอปนี้ขึ้น GitHub Pages ไว้แล้วที่
+**https://yuttachaicp-ops.github.io/saitama-training-tracker/**
 
-### GitHub Pages
+### อัปเดตเว็บหลังแก้โค้ด
 
-1. `npm run build`
-2. push โค้ดขึ้น GitHub
-3. ใช้ GitHub Actions หรือ push โฟลเดอร์ `dist/` ไปยัง branch `gh-pages`
-4. เปิด Settings → Pages แล้วเลือก branch นั้น
+```powershell
+npm run deploy
+```
+
+คำสั่งเดียวจบ — มันจะ `npm run build` แล้ว push โฟลเดอร์ `dist/` ขึ้น branch `gh-pages` ให้
+GitHub Pages จะอัปเดตภายใน 1–2 นาที
+
+> ครั้งแรกที่ push git จะถามชื่อผู้ใช้/รหัสผ่าน ให้ใส่ชื่อผู้ใช้ GitHub และใช้ **Personal Access Token** แทนรหัสผ่าน
+> ติดตั้ง [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager) ไว้จะจำให้ ไม่ต้องกรอกซ้ำ
+
+### เปลี่ยนไปใช้ GitHub Actions แทน (ไม่บังคับ)
+
+ถ้าอยากให้ build และ deploy เองอัตโนมัติทุกครั้งที่ `git push` ขึ้น `main`
+
+1. เปิด repo บนเว็บ GitHub → **Add file → Create new file**
+2. ตั้งชื่อไฟล์เป็น `.github/workflows/deploy.yml`
+3. คัดลอกเนื้อหาจาก `docs/github-pages-workflow.yml` ในโปรเจกต์นี้มาวาง แล้ว commit
+4. ไป **Settings → Pages → Source** เปลี่ยนเป็น **GitHub Actions**
+
+ต้องสร้างผ่านหน้าเว็บ เพราะการ push ไฟล์ใน `.github/workflows/` ต้องใช้ token ที่มี scope `workflow`
+
+### Netlify / Vercel / Cloudflare Pages
+
+- Build command: `npm run build`
+- Publish directory: `dist`
 
 ### Netlify / Vercel / Cloudflare Pages
 
