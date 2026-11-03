@@ -11,7 +11,7 @@
  * การล้างแคชจึงไม่ทำให้ข้อมูลการฝึกหาย
  */
 
-const CACHE = 'saitama-training-tracker-v2';
+const CACHE = 'saitama-training-tracker-v3';
 
 const CORE = ['./', './index.html', './manifest.webmanifest'];
 
