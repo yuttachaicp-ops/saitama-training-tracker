@@ -57,6 +57,18 @@ html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
+  /* clip แทน hidden เพราะไม่สร้าง scroll container ใหม่ (sticky topbar จึงยังทำงาน) */
+  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
+html {
+  /* กันเบราว์เซอร์มือถือขยายขนาดตัวอักษรเองตอนหมุนจอ */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -66,8 +78,16 @@ body {
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* เลื่อนได้เฉพาะแนวตั้ง — ปิดการซูมด้วยสองนิ้วและการปัดซ้ายขวา */
+  touch-action: pan-y;
   transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+/* แถบที่ตั้งใจให้เลื่อนแนวนอนได้ ต้องเปิด touch-action กลับมา */
+.pills,
+.week-strip,
+.seg {
+  touch-action: pan-x pan-y;
 }
 
 h1,
@@ -410,6 +430,11 @@ a {
 .grid {
   display: grid;
   gap: var(--gap);
+}
+
+/* กริดไอเท็มมีค่า min-width: auto โดยปริยาย ทำให้เนื้อหายาว ๆ ดันความกว้างจนล้นจอ */
+.grid > * {
+  min-width: 0;
 }
 .g2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));

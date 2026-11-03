@@ -289,6 +289,8 @@
   align-items: center;
   gap: 12px;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   text-align: left;
   padding: 13px;
   border-radius: var(--r-md);
@@ -331,6 +333,23 @@
 .day-dow span {
   font-size: 10.5px;
   color: var(--text-2);
+}
+
+/* ข้อความยาวต้องตัดด้วย … ไม่ใช่ดันการ์ดให้กว้างขึ้น */
+.day-card .grow {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.day-card .badge {
+  flex: 0 0 auto;
+}
+
+/* บนจอแคบมาก ซ่อนป้ายสถานะไว้ เพราะมีแถบสีด้านซ้ายบอกอยู่แล้ว */
+@media (max-width: 380px) {
+  .day-card .badge {
+    display: none;
+  }
 }
 
 /* ---------- History ---------- */
