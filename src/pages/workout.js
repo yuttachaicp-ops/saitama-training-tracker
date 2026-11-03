@@ -54,7 +54,7 @@ export function header(params, data) {
     title: 'การฝึกประจำวัน',
     subtitle: fmtThaiFull(date),
     back: '/',
-    right: `<button class="icon-btn" data-warmup aria-label="วอร์มอัป">${icon('info')}</button>`,
+    right: `<button class="icon-btn" data-warmup aria-label="วอร์มอัปและยืดเหยียด">${icon('heart')}</button>`,
   };
 }
 
@@ -414,7 +414,9 @@ export function mount(root, params, ctx) {
   const date = params.date || todayKey();
   const loc = locateDate(date, data.settings.startDate);
 
-  document.querySelector('[data-warmup]')?.addEventListener('click', openWarmupModal);
+  document.querySelector('[data-warmup]')?.addEventListener('click', () =>
+    navigate('/warmup', { r: 'warmup', from: '/workout' })
+  );
 
   if (!loc.inProgram) return;
   const plan = getDayPlan(loc.week, loc.dayIndex, data.settings, data.programOverrides);
@@ -631,9 +633,12 @@ function showCompleted(root, date, unlocked, ctx) {
       <div class="mt-14">${note(
         `อย่าลืมคูลดาวน์: เดินช้า ๆ 2–3 นาที แล้วยืดกล้ามเนื้อมัดใหญ่ ข้างละ 20–30 วินาที`
       )}</div>
+      <button class="btn btn-primary btn-block mt-14" data-nav="/warmup?r=cooldown">
+        ${icon('heart')} เริ่มคูลดาวน์พร้อมจับเวลา
+      </button>
       <div class="row mt-14" style="gap:10px">
         <button class="btn btn-ghost grow" data-nav="/stats">ดูสถิติ</button>
-        <button class="btn btn-primary grow" data-nav="/">กลับหน้าหลัก</button>
+        <button class="btn btn-ghost grow" data-nav="/">กลับหน้าหลัก</button>
       </div>
     </div>`;
 

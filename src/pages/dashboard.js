@@ -117,10 +117,15 @@ function todayCard(ov, data) {
         : ''
     }
 
-    <button class="btn ${done ? 'btn-ghost' : 'btn-primary'} btn-block mt-14" data-nav="${target}">
-      ${icon(done ? 'edit' : inProgress ? 'play' : 'play')}
-      ${done ? 'ดู / แก้ไขผลการฝึก' : inProgress ? 'ฝึกต่อ' : 'เริ่มฝึกวันนี้'}
-    </button>
+    <div class="row mt-14" style="gap:10px">
+      <button class="btn btn-ghost" data-nav="/warmup" title="วอร์มอัปก่อนฝึก">
+        ${icon('heart')} วอร์มอัป
+      </button>
+      <button class="btn ${done ? 'btn-ghost' : 'btn-primary'} grow" data-nav="${target}">
+        ${icon(done ? 'edit' : 'play')}
+        ${done ? 'ดู / แก้ไขผล' : inProgress ? 'ฝึกต่อ' : 'เริ่มฝึกวันนี้'}
+      </button>
+    </div>
   </div>`;
 }
 
@@ -220,7 +225,10 @@ export function view(params, data) {
     </div>
 
     <div class="section-title">ทางลัด</div>
-    <div class="grid g3">
+    <div class="grid g4">
+      <button class="card card-click center shortcut" data-nav="/warmup">
+        ${icon('heart')}<div class="small bold mt-8">วอร์มอัป & ยืดเหยียด</div>
+      </button>
       <button class="card card-click center shortcut" data-nav="/running">
         ${icon('run')}<div class="small bold mt-8">บันทึกการวิ่ง</div>
       </button>

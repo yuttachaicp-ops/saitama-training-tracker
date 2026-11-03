@@ -12,6 +12,7 @@ export const NAV_ITEMS = [
 ];
 
 const EXTRA_ITEMS = [
+  { path: '/warmup', label: 'วอร์มอัป & ยืดเหยียด', icon: 'heart' },
   { path: '/running', label: 'บันทึกการวิ่ง', icon: 'run' },
   { path: '/history', label: 'ประวัติการฝึก', icon: 'history' },
   { path: '/achievements', label: 'ความสำเร็จ', icon: 'trophy' },

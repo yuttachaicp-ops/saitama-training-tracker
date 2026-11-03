@@ -126,6 +126,66 @@ export const EX_ICON = {
   walk: E(
     '<circle cx="26" cy="6" r="2.8"/><path d="M26 9v8"/><path d="M26 17l-5 9M26 17l5 9"/><path d="M26 12l-6 3M26 12l6 2"/>'
   ),
+
+  // ---------- ท่าวอร์มอัป (เคลื่อนไหว) ----------
+  // ยกเข่าสลับอยู่กับที่
+  march: E(
+    '<circle cx="24" cy="5" r="2.6"/><path d="M24 8v9"/><path d="M24 17l-6 3 2 7M24 17l4 4v6"/><path d="M24 11l-5 4M24 11l5-2"/><path d="M8 28h32"/>'
+  ),
+  // หมุนไหล่และแขนเป็นวง
+  arm_circles: E(
+    '<circle cx="20" cy="6" r="2.6"/><path d="M20 9v10l-3 8M20 19l3 8"/><path d="M20 12l6-3"/><path d="M32 4a7 7 0 1 1-5 12" stroke-dasharray="3 3"/><path d="M28 14l-1 3 3 .5"/>'
+  ),
+  // บิดลำตัวซ้ายขวา
+  torso_twist: E(
+    '<circle cx="24" cy="5" r="2.6"/><path d="M24 8v10"/><path d="M24 18l-4 9M24 18l4 9"/><path d="M14 12h20"/><path d="M14 12l3-3M14 12l3 3M34 12l-3-3M34 12l-3 3"/>'
+  ),
+  // หมุนสะโพก
+  hip_circles: E(
+    '<circle cx="24" cy="5" r="2.6"/><path d="M24 8v8"/><ellipse cx="24" cy="18" rx="8" ry="4" stroke-dasharray="3 3"/><path d="M21 21l-2 6M27 21l2 6"/><path d="M24 11l-5 2M24 11l5 2"/>'
+  ),
+  // แกว่งขาหน้า-หลัง
+  leg_swings: E(
+    '<circle cx="24" cy="5" r="2.6"/><path d="M24 8v10"/><path d="M24 18v9"/><path d="M24 18l9 4" stroke-dasharray="3 2"/><path d="M24 18l-8 5" stroke-dasharray="3 2"/><path d="M38 14v10"/>'
+  ),
+  // หมุนข้อเท้า
+  ankle_circles: E(
+    '<path d="M20 6v12l-4 6h12"/><ellipse cx="26" cy="25" rx="7" ry="3.5" stroke-dasharray="3 3"/><path d="M14 6h12"/>'
+  ),
+  // แอ่น-โก่งหลัง (Cat-Cow)
+  cat_cow: E(
+    '<circle cx="12" cy="12" r="2.6"/><path d="M15 13c6-5 14-5 18 1"/><path d="M33 14v9M18 12v11"/><path d="M4 25h40"/>'
+  ),
+
+  // ---------- ท่ายืดค้าง (หลังฝึก) ----------
+  // ยืดต้นขาหน้า
+  quad_stretch: E(
+    '<circle cx="22" cy="5" r="2.6"/><path d="M22 8v9"/><path d="M22 17v10"/><path d="M22 17l6 2-4 6"/><path d="M22 11l6 6"/><path d="M8 28h32"/>'
+  ),
+  // ยืดต้นขาหลัง
+  hamstring_stretch: E(
+    '<circle cx="14" cy="8" r="2.6"/><path d="M17 10l4 5"/><path d="M21 15h13"/><path d="M21 15l-3 11"/><path d="M17 11l6 5"/><path d="M6 27h36"/>'
+  ),
+  // ยืดน่อง
+  calf_stretch: E(
+    '<circle cx="16" cy="7" r="2.6"/><path d="M16 10v8"/><path d="M16 18l-7 8M16 18l7 8"/><path d="M16 12l10-2"/><path d="M30 4v22"/><path d="M4 26h26"/>'
+  ),
+  // ยืดสะโพกท่าเลข 4
+  figure_four: E(
+    '<circle cx="9" cy="16" r="2.6"/><path d="M12 17h10"/><path d="M22 17l5-7M22 17l6 6"/><path d="M24 13l7 3"/><path d="M4 26h40"/>'
+  ),
+  // ยืดอกและไหล่
+  chest_stretch: E(
+    '<circle cx="24" cy="5" r="2.6"/><path d="M24 8v10"/><path d="M24 18l-4 9M24 18l4 9"/><path d="M24 11l-9-4M24 11l9-4"/><path d="M15 7l-2 3M33 7l2 3"/>'
+  ),
+  // ท่าเด็ก (Child Pose)
+  child_pose: E(
+    '<path d="M10 22h8l12-8"/><circle cx="8" cy="21" r="2.6"/><path d="M30 14l4 8h-6"/><path d="M12 22c4-6 10-8 16-8"/><path d="M4 25h40"/>'
+  ),
+  // หายใจลึก
+  breathe: E(
+    '<circle cx="24" cy="16" r="8" stroke-dasharray="4 3"/><path d="M24 20v-9M24 11l-3 3M24 11l3 3"/>'
+  ),
   // พัก
   rest: E(
     '<path d="M16 8h10l-10 12h10"/><path d="M30 14h6l-6 7h6"/>'

@@ -27,16 +27,16 @@ export function view() {
       </ul>
     </div>
 
-    <div class="section-title">วอร์มอัปก่อนฝึก</div>
+    <div class="section-title">วอร์มอัปและยืดเหยียด</div>
     <div class="card">
-      <ul class="small muted" style="margin:0;padding-left:18px;line-height:1.95">
+      <p class="small muted">มีหน้าแยกพร้อมโหมดจับเวลานำทีละท่า ทั้งชุดก่อนฝึกและหลังฝึก</p>
+      <div class="row mt-14" style="gap:10px">
+        <button class="btn btn-primary grow" data-nav="/warmup?r=warmup">${icon('play')} ชุดก่อนฝึก</button>
+        <button class="btn btn-ghost grow" data-nav="/warmup?r=cooldown">${icon('heart')} ชุดหลังฝึก</button>
+      </div>
+      <div class="small muted mt-14">สรุปสั้น ๆ</div>
+      <ul class="small muted" style="margin:6px 0 0;padding-left:18px;line-height:1.95">
         ${WARMUP.map((w) => `<li>${w}</li>`).join('')}
-      </ul>
-    </div>
-
-    <div class="section-title">คูลดาวน์หลังฝึก</div>
-    <div class="card">
-      <ul class="small muted" style="margin:0;padding-left:18px;line-height:1.95">
         ${COOLDOWN.map((w) => `<li>${w}</li>`).join('')}
       </ul>
     </div>

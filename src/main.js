@@ -24,6 +24,7 @@ import * as History from './pages/history.js';
 import * as Achievements from './pages/achievements.js';
 import * as Settings from './pages/settings.js';
 import * as Guide from './pages/guide.js';
+import * as Mobility from './pages/mobility.js';
 
 /* ---------- โครงหน้าจอ ---------- */
 
@@ -62,6 +63,7 @@ const PAGES = {
   '/achievements': Achievements,
   '/settings': Settings,
   '/guide': Guide,
+  '/warmup': Mobility,
 };
 
 function renderPage(mod, params) {
