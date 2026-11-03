@@ -3,7 +3,10 @@
   "short_name": "Training",
   "description": "ติดตามการออกกำลังกาย 12 สัปดาห์",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
+  "lang": "th",
   "background_color": "#111318",
   "theme_color": "#F12D35",
   "icons": [

@@ -107,6 +107,16 @@ if (!state.storageAvailable()) {
   );
 }
 
+/* ---------- Service Worker (ใช้งานออฟไลน์) ---------- */
+// ลงทะเบียนเฉพาะไฟล์ที่ build แล้ว เพื่อไม่ให้แคชมารบกวนตอน development
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('./sw.js')
+      .catch((err) => console.warn('[sw] ลงทะเบียนไม่สำเร็จ', err));
+  });
+}
+
 /* ---------- เริ่มทำงาน ---------- */
 router.start();
 
