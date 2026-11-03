@@ -1,0 +1,16 @@
+{
+  "name": "saitama-training-tracker",
+  "private": true,
+  "version": "1.0.0",
+  "description": "แอปติดตามการออกกำลังกาย 12 สัปดาห์ (bodyweight + running) ทำงานออฟไลน์ เก็บข้อมูลในเครื่อง",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node scripts/smoke-test.mjs"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

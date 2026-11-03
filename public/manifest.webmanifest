@@ -1,0 +1,17 @@
+{
+  "name": "Saitama Training Tracker",
+  "short_name": "Training",
+  "description": "ติดตามการออกกำลังกาย 12 สัปดาห์",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#111318",
+  "theme_color": "#F12D35",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%23F12D35'/%3E%3Cg stroke='white' stroke-width='42' stroke-linecap='round'%3E%3Cpath d='M128 192v128M384 192v128M176 256h160'/%3E%3C/g%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

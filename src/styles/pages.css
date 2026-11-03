@@ -1,0 +1,437 @@
+/* ============================================================
+   pages.css — สไตล์เฉพาะของแต่ละหน้า
+   ============================================================ */
+
+/* ---------- Dashboard ---------- */
+.hero {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.hero-week {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.hero-week span {
+  font-size: 15px;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.hero-side {
+  display: grid;
+  gap: 10px;
+  flex: 1 1 200px;
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card-2);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+}
+
+.mini-stat svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: var(--primary);
+}
+
+.mini-stat b {
+  font-size: 15px;
+}
+
+.today-card {
+  border-radius: var(--r-lg);
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.today-type {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.today-type .ex-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  background: var(--primary-soft);
+}
+
+.today-type .ex-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.week-dots {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.wd {
+  text-align: center;
+  padding: 9px 2px;
+  border-radius: 11px;
+  background: var(--card-2);
+  border: 1px solid transparent;
+  transition: border-color 0.16s var(--ease);
+}
+
+.wd:hover {
+  border-color: var(--line);
+}
+
+.wd-day {
+  font-size: 10.5px;
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.wd-mark {
+  width: 22px;
+  height: 22px;
+  margin: 5px auto 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bg-2);
+  color: var(--text-2);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.wd-mark svg {
+  width: 12px;
+  height: 12px;
+}
+
+.wd.done .wd-mark {
+  background: var(--success);
+  color: #06231a;
+}
+.wd.rest .wd-mark {
+  background: transparent;
+  border: 1px dashed var(--line);
+}
+.wd.today {
+  border-color: var(--primary);
+}
+.wd.missed .wd-mark {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+/* ---------- Workout ---------- */
+.timer-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  flex-wrap: wrap;
+}
+
+.timer-val {
+  font-size: 32px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.set-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.set-chip {
+  min-width: 56px;
+  padding: 6px 9px;
+  border-radius: 9px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-2);
+  text-align: center;
+  transition: all 0.16s var(--ease);
+}
+
+.set-chip.on {
+  background: var(--success-soft);
+  border-color: color-mix(in srgb, var(--success) 45%, transparent);
+  color: var(--success);
+}
+
+.rest-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: color-mix(in srgb, var(--bg) 93%, transparent);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  animation: fade 0.2s var(--ease);
+}
+
+.rest-count {
+  font-size: 68px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary);
+  line-height: 1;
+}
+
+/* ---------- Completed screen ---------- */
+.done-screen {
+  text-align: center;
+  padding: 30px 10px 10px;
+}
+
+.done-badge {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--success-soft);
+  color: var(--success);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  animation: pop 0.5s var(--ease);
+}
+
+.done-badge svg {
+  width: 44px;
+  height: 44px;
+}
+
+/* ---------- Program ---------- */
+.week-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 700px) {
+  .week-strip {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+.wk {
+  padding: 10px 2px;
+  border-radius: 11px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-2);
+  transition: all 0.16s var(--ease);
+}
+
+.wk small {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.wk.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.wk.done {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 40%, transparent);
+}
+.wk.deload small {
+  color: var(--warning);
+  opacity: 1;
+}
+.wk.active.deload small {
+  color: #ffe2b0;
+}
+
+.day-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 13px;
+  border-radius: var(--r-md);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line);
+  transition: border-color 0.16s var(--ease), transform 0.14s var(--ease);
+}
+
+.day-card:active {
+  transform: scale(0.99);
+}
+
+.day-card.s-completed {
+  border-left-color: var(--success);
+}
+.day-card.s-today {
+  border-left-color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+}
+.day-card.s-missed {
+  border-left-color: var(--warning);
+}
+.day-card.s-rest {
+  border-left-color: var(--text-2);
+  opacity: 0.85;
+}
+
+.day-dow {
+  width: 44px;
+  flex: 0 0 44px;
+  text-align: center;
+}
+
+.day-dow b {
+  display: block;
+  font-size: 15px;
+}
+
+.day-dow span {
+  font-size: 10.5px;
+  color: var(--text-2);
+}
+
+/* ---------- History ---------- */
+.hist-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border-radius: var(--r-md);
+  background: var(--card);
+  border: 1px solid var(--line);
+  width: 100%;
+  text-align: left;
+}
+
+.hist-row + .hist-row {
+  margin-top: 9px;
+}
+
+/* ---------- Achievements ---------- */
+.ach {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 13px;
+  border-radius: var(--r-md);
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.ach.locked {
+  opacity: 0.55;
+}
+
+.ach-ic {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--card-2);
+  color: var(--text-2);
+}
+
+.ach.unlocked .ach-ic {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.ach-ic svg {
+  width: 23px;
+  height: 23px;
+}
+
+/* ---------- Statistics ---------- */
+.legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--text-2);
+  margin-top: 10px;
+}
+
+.legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* ---------- Settings ---------- */
+.theme-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.theme-opt {
+  padding: 14px 8px;
+  border-radius: var(--r-md);
+  background: var(--card-2);
+  border: 1.5px solid transparent;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-2);
+  transition: all 0.16s var(--ease);
+}
+
+.theme-opt svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+.theme-opt.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-soft);
+}
